@@ -86,27 +86,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
              sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
-
-   /* document.getElementById("sortAsc").addEventListener("click", function () {
-        sortAndShowProducts(ORDER_ASC_BY_NAME);
-    });
-
-    document.getElementById("sortDesc").addEventListener("click", function () {
-        sortAndShowProducts(ORDER_DESC_BY_NAME);
-    });
-
-    document.getElementById("sortByCount").addEventListener("click", function () {
-        sortAndShowProducts(ORDER_BY_PROD_COUNT);
-    });
-
-    document.getElementById("clearRangeFilter").addEventListener("click", function () {
-        document.getElementById("rangeFilterCountMin").value = "";
-        document.getElementById("rangeFilterCountMax").value = "";
-
-        minCount = undefined;
-        maxCount = undefined;
-
-        showProductsList();
-    });*/
-
 });

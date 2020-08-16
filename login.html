@@ -14,7 +14,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
-    html, body{
+    html,
+    body {
       height: 100%;
     }
 
@@ -38,7 +39,25 @@
 </head>
 
 <body class="text-center">
-  <div class="container p-5">
+  <div class="signin container p-5">
+    <img src="img/login.png" width="110%" height="110%" >
+    <!--<img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
+      <!--<form>-->
+      <h1 class="h3 mb-3 font-weight-normal">Inicie sesión</h1>
+      <!--<label for="inputEmail" class="sr-only">Email address</label>-->
+      <p><input type="text" id="inputCorreo" name="correo" placeholder="Correo electrónico"></p>
+      <!--<label for="inputPassword" class="sr-only">Password</label>-->
+      <p><input type="password" id="inputContrasenia" name="contrasenia" placeholder="Contraseña"></p>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordarme
+        </label>
+      </div>
+      <p><input type="submit" id="btnIngreso" value="Ingresar"></p>
+    </div>
+    <!--</form>-->
+</body>
+<!--
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
@@ -46,8 +65,9 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
   </div>
-
-  <script src="js/init.js"></script>
-  <script src="js/login.js"></script>
+ -->
+<script src="js/init.js"></script>
+<script src="js/login.js"></script>
 </body>
+
 </html>
