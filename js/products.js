@@ -10,20 +10,20 @@ function sortProducts(criteria, array) {
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME) {
         result = array.sort(function (a, b) {
-            if (a.name < b.name) { return -1; }
-            if (a.name > b.name) { return 1; }
+            if (a.cost < b.cost) { return -1; }
+            if (a.cost > b.cost) { return 1; }
             return 0;
         });
     } else if (criteria === ORDER_DESC_BY_NAME) {
         result = array.sort(function (a, b) {
-            if (a.name > b.name) { return -1; }
-            if (a.name < b.name) { return 1; }
+            if (a.cost > b.cost) { return -1; }
+            if (a.cost < b.cost) { return 1; }
             return 0;
         });
     } else if (criteria === ORDER_BY_PROD_COUNT) {
         result = array.sort(function (a, b) {
-            let aCount = parseInt(a.productCount);
-            let bCount = parseInt(b.productCount);
+            let aCount = parseInt(a.soldCount);
+            let bCount = parseInt(b.soldCount);
 
             if (aCount > bCount) { return -1; }
             if (aCount < bCount) { return 1; }
@@ -78,6 +78,7 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     //Muestro los productos ordenados
     showProductsList();
 }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -88,6 +89,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
              sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
+     document.getElementById("sortBySoldcount").addEventListener("click", function(){
+         sortAndShowProducts(ORDER_BY_PROD_COUNT);
+     });
+     document.getElementById("ordAsc").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_ASC_BY_NAME);
+    });
+
+    document.getElementById("ordDesc").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_DESC_BY_NAME);
+    });
+
+    //////LIMPIAR FILTRO
     document.getElementById("clearFilter").addEventListener("click", function(){
         document.getElementById("filterCountMin").value = "";
         document.getElementById("filterCountMax").value = "";
@@ -97,6 +110,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showProductsList();
     });
+
+    /////////FILTRO
     document.getElementById("rangeFilter").addEventListener("click", function(){
         //Obtengo el mínimo y máximo de los intervalos para filtrar 
     

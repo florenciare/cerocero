@@ -26,21 +26,33 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-image:linear-gradient(90deg, #52c4df, #ad55c1);  
-     
+      background-image: url(img/login.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size:cover; 
+    
     }
+   
     .signin {
       width: 100%;
       max-width: 330px;
       padding: 15px;
       margin: auto;
-    }
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+      border-radius: 5%;
+ 
+    }   
   </style>
 </head>
 
 <body class="text-center">
+ 
   <div class="signin container p-5">
-    <img src="img/login.png"  width="110%" height="110%" >
+     <!-- <img src="img/login.png"  width="110%" height="110%" >  -->
     <!--<img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
       <!--<form>-->
       <h1 class="h3 mb-3 font-weight-normal">Inicie sesión</h1>
@@ -57,15 +69,7 @@
     </div>
     <!--</form>-->
 </body>
-<!--
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
- -->
+
 <script src="js/init.js"></script>
 <script src="js/login.js"></script>
 </body>
