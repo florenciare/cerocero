@@ -26,11 +26,11 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-image: url(img/login.png);
+      background-image: url(img/fondo.jpg);
       background-position: center;
       background-repeat: no-repeat;
-      background-size:cover; 
-    
+      background-size:100%;
+   
     }
    
     .signin {
@@ -44,8 +44,12 @@
       width: 100%;
       padding: 20px;
       border-radius: 5%;
- 
-    }   
+     }   
+     h1{
+       border-top: 2px solid #52c4df;
+       border-bottom: 2px solid #52c4df;
+     }
+     
   </style>
 </head>
 
@@ -56,10 +60,10 @@
     <!--<img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
       <!--<form>-->
       <h1 class="h3 mb-3 font-weight-normal">Inicie sesión</h1>
-      <!--<label for="inputEmail" class="sr-only">Email address</label>-->
-      <p><input type="text" id="inputCorreo" name="correo" placeholder="Correo electrónico"></p>
-      <!--<label for="inputPassword" class="sr-only">Password</label>-->
-      <p><input type="password" id="inputContrasenia" name="contrasenia" placeholder="Contraseña"></p>
+      <!-- <label for="inputEmail" class="sr-only">Email address</label> -->
+      <p><input type="email" id="inputCorreo"  class="form-control" name="correo" placeholder="Correo electrónico" required autofocus></p>
+      <!-- <label for="inputPassword" class="sr-only">Password</label> -->
+      <p><input type="password" id="inputContrasenia" class="form-control" name="contrasenia" placeholder="Contraseña"></p>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Recordarme
@@ -67,6 +71,7 @@
       </div>
       <p><input type="submit" id="btnIngreso" value="Ingresar"></p>
     </div>
+  
     <!--</form>-->
 </body>
 
