@@ -51,11 +51,10 @@ function showProductsList() {
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name + `</h4>
+                            <h4 class="mb-1">`+ product.name + ` - ` + product.cost + ` ` + product.currency + `</h4>
                             <small class="text-muted">` + product.soldCount + ` vendidos</small>
                         </div>
                         <p class="mb-1">` + product.description + `</p>
-                        <p class="mb-1">` + product.cost + ` ` + product.currency + ` </p>
 
                     </div>
                 </div>
@@ -85,23 +84,23 @@ function sortAndShowProducts(sortCriteria, productsArray) {
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
-           // console.log(resultObj);
-             sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
+            // console.log(resultObj);
+            sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
-     document.getElementById("sortBySoldcount").addEventListener("click", function(){
-         sortAndShowProducts(ORDER_BY_PROD_COUNT);
-     });
-     document.getElementById("ordAsc").addEventListener("click", function(){
+    document.getElementById("sortBySoldcount").addEventListener("click", function () {
+        sortAndShowProducts(ORDER_BY_PROD_COUNT);
+    });
+    document.getElementById("ordAsc").addEventListener("click", function () {
         sortAndShowProducts(ORDER_ASC_BY_NAME);
     });
 
-    document.getElementById("ordDesc").addEventListener("click", function(){
+    document.getElementById("ordDesc").addEventListener("click", function () {
         sortAndShowProducts(ORDER_DESC_BY_NAME);
     });
 
     //////LIMPIAR FILTRO
-    document.getElementById("clearFilter").addEventListener("click", function(){
+    document.getElementById("clearFilter").addEventListener("click", function () {
         document.getElementById("filterCountMin").value = "";
         document.getElementById("filterCountMax").value = "";
 
@@ -112,26 +111,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     /////////FILTRO
-    document.getElementById("rangeFilter").addEventListener("click", function(){
+    document.getElementById("rangeFilter").addEventListener("click", function () {
         //Obtengo el mínimo y máximo de los intervalos para filtrar 
-    
+
         precioMin = document.getElementById("filterCountMin").value;
         precioMax = document.getElementById("filterCountMax").value;
 
-        if ((precioMin != undefined) && (precioMin != "") && (parseInt(precioMin)) >= 0){
+        if ((precioMin != undefined) && (precioMin != "") && (parseInt(precioMin)) >= 0) {
             precioMin = parseInt(precioMin);
         }
-        else{
+        else {
             precioMin = undefined;
         }
 
-        if ((precioMax != undefined) && (precioMax != "") && (parseInt(precioMax)) >= 0){
+        if ((precioMax != undefined) && (precioMax != "") && (parseInt(precioMax)) >= 0) {
             precioMax = parseInt(precioMax);
         }
-        else{
+        else {
             precioMax = undefined;
         }
 
         showProductsList();
     });
+
+    // const usernav = document.getElementById('usernav');
+    // let username = JSON.parse(localStorage.getItem('user'));
+    // if (username != null ){
+    //     console.log(username[0].usuario);
+    //     usernav.innerHTML=username[0].usuario;
+    //     //usernav.innerHTML='<a href="#" id="close" class="nav-item nav-link active"'+username[0].usuario+'</a>';
+    // }
+
 });

@@ -136,6 +136,14 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
+#usernav{
+  color:white;
+  border-bottom: 1px dotted #ffffff;
+}
 .checked {
   color: orange;
+}
+body{
+  background: linear-gradient(90deg, #52c4df, #ad55c1);
+ 
 }
