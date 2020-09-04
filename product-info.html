@@ -14,7 +14,19 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
+<style>
 
+  .fondito{
+    background: rgb(0, 0, 0); 
+      background: rgba(255, 255, 255, 0.2);
+  }
+  .fondeto{
+    background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+  }
+  
+</style>
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -23,16 +35,70 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block">
+        <div id="usernav"></div></a>
+
     </div>
   </nav>
-  <div class="container p-5">
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <div class="fondeto">
+          <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        </div>
+                <!-- <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
+          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p> -->
+      </div>
+      <br>
+      <div class="fondito">
+        <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Cantidad de vendidos</dt>
+        <dd>
+          <p id="productSCount"></p>
+        </dd>
+
+        <dt>Categoría:</dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+        <dt>Precio:</dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImageGallery">
+          </div>
+        </dd>
+      </dl>
+
+      </div>
+      
+      <!-- <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a> -->
+    </div>
+  </main>
+<!-- <div class="row">
+  <div class="list-group" id="prod-list-container">
+  </div>
+</div> -->
+
+  <!-- <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
-  </div>
+  </div> -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
