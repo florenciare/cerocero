@@ -138,12 +138,12 @@ a.custom-card:hover {
 
 #usernav{
   color:white;
-  border-bottom: 1px dotted #ffffff;
+ 
 }
 .checked {
   color: orange;
 }
 body{
-  background: linear-gradient(90deg, #52c4df, #ad55c1);
+  background: linear-gradient(90deg,  #b752dfe7, #56e1fabd);
  
 }

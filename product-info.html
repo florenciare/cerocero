@@ -18,13 +18,33 @@
 
   .fondito{
     background: rgb(0, 0, 0); 
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.3);
   }
   .fondeto{
     background: rgb(0, 0, 0);
       background: rgba(0, 0, 0, 0.5); 
       color: #f1f1f1;
   }
+  .coments h5{
+    background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.1); 
+      color: black;
+  }
+ .relatedd{
+  background: rgb(0, 0, 0); 
+      background: rgba(255, 255, 255, 0.1);
+ }
+  textarea{
+    resize: none;
+    height: 100px;
+    width: 100%;
+    border-radius: 5px;
+    background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.3); 
+      color: #f1f1f1;
+    border:1px solid white;
+  }
+  
   
 </style>
 <body>
@@ -34,11 +54,22 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block">
-        <div id="usernav"></div></a>
-
-    </div>
+      <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a> -->
+      <a class="py-2 d-none d-md-inline-block"> <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="usernav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html"><i class='fas fa-shopping-cart'></i> Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html"><i class='far fa-user-circle'></i> Mi perfil</a>
+          <a class="dropdown-item" href="#" id="close" ><i class='fas fa-sign-out-alt'></i> Cerrar sesión</a>
+        </div>
+      </div>
+        
+         </a>
+        </div>
+    
   </nav>
   <main role="main">
     <div class="container mt-5">
@@ -79,34 +110,45 @@
           <div class="row text-center text-lg-left pt-2" id="productImageGallery">
           </div>
         </dd>
-
-        <dt>Comentarios</dt>
+       
+<div class="coments">
+        <dt>Comentarios</dt> <hr>
         <dd>
           <div class="list-group" id="coment-list-container"></div>    
-          </dd> 
-  
-        <dt>Productos relacionados</dt>
+          </dd> </div>
+         
+        <dt>Agregar comentario</dt>
+        
         <dd>
-          <p id="productR"></p>
+          <form>
+            <textarea name="texto" id="cajaTexto" ></textarea> <br>
+            <label>Puntuación:</label>
+            <input type="radio" id="star1" name="scoress" value="1" required><label for="star1"> 1 </label>
+            <input type="radio" id="star2" name="scoress" value="2" required><label for="star2"> 2 </label>
+            <input type="radio" id="star3" name="scoress" value="3" required><label for="star3"> 3 </label>
+            <input type="radio" id="star4" name="scoress" value="4" required><label for="star4"> 4 </label>
+            <input type="radio" id="star5" name="scoress" value="5" required><label for="star5"> 5 </label><br>
+            
+            <input type="button" id="btnComentario" class="btn btn-primary" value="Enviar comentario"> <br> <br>
+          
+          </form>
         </dd>
+        <dd>
+          <dt>Productos relacionados</dt><br>
+          <div class="productR">
+            <div class="list-group" id="prod-list-container"></div> <br>   
+            <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+          </div>
+          
+        </dd> 
       </dl>
+
 
       </div>
       
-  <!-- <input type="button" class="btn btn-light btn-lg btn-block" id="btnComentarios" value="Ver comentarios"> 
-  <div class="comentario"></div> -->
     </div>
   </main>
 
-
-  <!-- <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div> -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
