@@ -47,7 +47,12 @@ if (username != null ){
     console.log(username[0].usuario);
     usernav.innerHTML=username[0].usuario;
     //usernav.innerHTML='<a href="#" id="close" class="nav-item nav-link active"'+username[0].usuario+'</a>';
+}else{
+   alert("Debe iniciar sesión");
+   location.href="index.html";
 }
+
+
 close.addEventListener('click', function(){
   localStorage.clear('user');
   location.href="index.html";
