@@ -43,22 +43,23 @@ function showProductsList() {
         if (((precioMin == undefined) || (precioMin != undefined && parseInt(product.cost) >= precioMin)) &&
             ((precioMax == undefined) || (precioMax != undefined && parseInt(product.cost) <= precioMax))) {
 
-            htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row justify-content-around">
-                    <div class="col-6 col-sm-4">
-                    
+            htmlContentToAppend += `               
+                    <div class="col-md-4">
+                    <a href="product-info.html" class="list-group-item list-group-item-action">
+                    <div class="card mb-4 shadow-sm">
                         <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     </div>
-                    </div>
-                    <div class="col">
+                    
+                    <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
                             <h4 class="mb-1">`+ product.name + ` - ` + product.cost + ` ` + product.currency + `</h4>
                             <small class="text-muted">` + product.soldCount + ` vendidos</small>
                         </div>
                         <p class="mb-1">` + product.description + `</p>
                         <div class="w-100 d-none d-md-block"></div>
-                                    
-            </a>
+                        </div>
+                       </a>
+                        </div>             
             `
         }
 

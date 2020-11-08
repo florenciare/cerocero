@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
             edad.value=usuario[0].edad;
             email.value=usuario[0].email;
             telefono.value=usuario[0].telefono;
-
+        let username = JSON.parse(localStorage.getItem('user'));
+        document.getElementById("txtUsernav").value= username[0].usuario;
+        document.getElementById("txtPsw").value= username[0].contra;
         }
 
 
