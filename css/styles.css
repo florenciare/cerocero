@@ -144,6 +144,6 @@ a.custom-card:hover {
   color: orange;
 }
 body{
-  background: linear-gradient(90deg,  #e0dd2ae7, #56e1fabd);
+  background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
  
 }

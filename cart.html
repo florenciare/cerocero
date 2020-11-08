@@ -73,7 +73,7 @@
     <!-- <div class="col-md-10 order-md-1"> -->
     <div class="list-group-item list-group-item-action">
       <div id="carrito" class="table-responsive">
-        <table class="table" id="listacompra">
+        <table class="table" id="listacompra" onchange="functionR()">
           <thead>
           <tr>
           <th scope="col">Imagen</th>
@@ -117,16 +117,136 @@
                 </ul>
               <hr class="mb-4">
                 </div>
-              <button class="btn btn-primary" type="submit">Método de pago</button>
+              <button class="btn btn-primary" id="btnPago" data-toggle="modal" type="submit" data-target="#exampleModal">Método de pago</button>
+                           
               <div class="float-right">
-                 <button class="btn btn-primary" type="submit">Método de envío</button>
+                 <button class="btn btn-primary" id="btnEnvio" data-toggle="modal" type="submit" data-target="#exampleModal2">Método de envío</button>
               </div> <br> 
               <br>
-              <button type="button" class="btn btn-success btn-lg btn-block">Finalizar compra</button>
-
-
-
+              <button id="btnComprar" class="btn btn-success btn-lg btn-block" data-toggle="modal" type="submit" >Finalizar compra</button>
 </div>
+<!--MODAL COMPRA-->
+<div class="modal"  id="exampleModal3" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="fas fa-check" style="color: green;"></i>  Compra realizada!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Compra realizada con éxito</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--MODAL COMPRA ERROR-->
+<div class="modal"  id="exampleModal4" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Oops!  <i class="fas fa-exclamation-triangle" style="color:gold"></i> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Debe completar los datos requeridos</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PAGO -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Elija método de pago </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <i class="fab fa-cc-visa"style="color:navy;"></i>
+        <i class="fab fa-cc-amex" style="color:blue;"></i>
+        <i class="fab fa-cc-mastercard" style="color: orange;"></i>
+        <br>
+        <label for="tarjeta">Número de tarjeta:</label>
+        <input type="text"  class="form-control" placeholder="XXXX XXXX XXXX XXXX" id="nroTarj" required>
+        <label for="tarjeta" id="tarjetaOk"></label>
+        <br>
+        <label for="fecha">Fecha de vencimiento:</label>
+        <input type="date" class="form-control" id="fechacheck" required>
+        <label for="fecha" id="fechaOk"></label>
+            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary submitBtn" onclick="functionK()">Continuar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ENVÍO -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Elija método de envío </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    
+      <div class="modal-body">
+        <form id="form" class="needs-validation" novalidate>
+        <label for="direccion">Dirección:</label>
+        <input type="text"  class="form-control" placeholder="Calle, número, esquina." id="direcc" required>
+        <label for="direcc" id="direccOk"></label>
+        <hr class="mb-4">
+
+        <p>Seleccionar país:
+        <select name="menu" id="pais">
+          <option value="0">Uruguay</option>
+          <option value="1">Argentina</option>
+          <option value="2">Chile</option>
+        </select></p>
+        <hr class="mb-4">
+
+        <h6 class="mb-3">Tipo de envío</h5>
+
+        <div class="custom-control custom-radio">
+          <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+          <label class="custom-control-label" for="premiumradio">Premium (2-5 días) - Costo del 15%</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="expressradio">Express (5-8 días) - Costo del 7%</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="standardradio">Standard (12 a 15 días) - Costo del 5%</label>
+        </div>
+      </div>
+    </form>
+      <div class="modal-footer">
+        <button type="button"  id="btnEnvioModal" class="btn btn-primary submitBtn" onclick="functionJ()">Continuar</button>
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">
